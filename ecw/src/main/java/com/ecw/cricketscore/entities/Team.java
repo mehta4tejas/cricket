@@ -13,16 +13,17 @@ import javax.persistence.OneToMany;
 public class Team {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 	@Column(unique = true)
 	private String name;
 	@OneToMany(mappedBy = "team")
 	private List<TournamentTeam> tournamentTeams;
 	
-	public int getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {

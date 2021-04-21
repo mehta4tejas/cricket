@@ -11,17 +11,19 @@ public class MatchScore {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 	@ManyToOne
 	private TournamentTeamPlayer tournamentTeamPlayer;
 	@ManyToOne
 	private Match match;
 	private short score;
 	private boolean isOut;
-	public int getId() {
+	
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public TournamentTeamPlayer getTournamentTeamPlayer() {

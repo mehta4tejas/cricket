@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class TournamentTeamPlayer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 	@ManyToOne
 	private Player player;
 	@ManyToOne
@@ -21,10 +21,11 @@ public class TournamentTeamPlayer {
 	@OneToMany(mappedBy = "tournamentTeamPlayer")
 	private List<MatchScore> matchScores;
 	
-	public int getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public Player getPlayer() {
@@ -38,6 +39,12 @@ public class TournamentTeamPlayer {
 	}
 	public void setTournamentTeam(TournamentTeam tournamentTeam) {
 		this.tournamentTeam = tournamentTeam;
+	}
+	public List<MatchScore> getMatchScores() {
+		return matchScores;
+	}
+	public void setMatchScores(List<MatchScore> matchScores) {
+		this.matchScores = matchScores;
 	}
 	
 }

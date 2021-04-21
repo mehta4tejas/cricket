@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 public class Match {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 	@ManyToOne
 	private TournamentTeam fromTournamentTeam;
 	@ManyToOne
@@ -22,10 +22,11 @@ public class Match {
 	private Date date;
 	@OneToMany(mappedBy = "match")
 	private List<MatchScore> matchScores;
-	public int getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public TournamentTeam getFromTournamentTeam() {
