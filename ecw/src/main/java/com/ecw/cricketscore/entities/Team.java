@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Team {
 	@Id
@@ -17,6 +19,7 @@ public class Team {
 	@Column(unique = true)
 	private String name;
 	@OneToMany(mappedBy = "team")
+	@JsonManagedReference
 	private List<TournamentTeam> tournamentTeams;
 	
 	

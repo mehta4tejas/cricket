@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity 
 public class TournamentTeam {
 	@Id
@@ -17,6 +19,7 @@ public class TournamentTeam {
 	@ManyToOne
 	private Tournament tournament;
 	@ManyToOne
+	@JsonBackReference
 	private Team team;
 	@OneToMany(mappedBy = "tournamentTeam")
 	private List<TournamentTeamPlayer> tournamentTeamPlayers;
